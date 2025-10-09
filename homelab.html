@@ -2,40 +2,160 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Derek Cyr | Home Lab</title>
-  <link rel="stylesheet" href="assets/styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Derek Cyr - Home Lab</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">Resume</a>
-    </nav>
+  <!-- Hero Section -->
+  <header class="hero hero-small">
+    <div class="hero-bg">
+      <div class="blob blob1"></div>
+      <div class="blob blob2"></div>
+    </div>
+    <div class="hero-content">
+      <h1 class="hero-title">My Home Lab</h1>
+      <p class="hero-subtitle">Virtualization, Networking, and Self-Hosted Services</p>
+      <a href="index.html" class="btn-hero">Back to Portfolio</a>
+    </div>
   </header>
 
-  <main>
-    <h1>Home Lab Infrastructure Overview</h1>
-    <p>My home lab is a robust, self-hosted environment designed to simulate enterprise-grade IT infrastructure...</p>
+  <!-- Overview Section -->
+  <section class="section overview">
+    <h2>Home Lab Infrastructure Overview</h2>
+    <p>My home lab is a robust, self-hosted environment designed to simulate enterprise-grade IT infrastructure, providing a hands-on platform for virtualization, network management, systems administration, and secure remote access. It integrates multiple physical servers, virtual machines, containers, and Dockerized services, all orchestrated through Proxmox VE, providing a flexible, modular, and highly functional environment.</p>
+  </section>
 
+  <!-- Physical Infrastructure Section -->
+  <section class="section cards-section">
     <h2>Physical Infrastructure</h2>
-    <ul>
-      <li><b>Proxmox Virtualization Server:</b> Intel Xeon E5-2660 v2, 68GB RAM, GTX 1050 GPU passthrough...</li>
-      <li><b>Plex Media Server:</b> Windows, GTX 1060 GPU, Surfshark VPN...</li>
-      <li><b>TrueNAS Storage Server:</b> 4TB capacity, NFS & SMB shares...</li>
-    </ul>
+    <div class="cards-container">
 
+      <div class="card">
+        <h3>Proxmox Virtualization Server</h3>
+        <p><strong>Hardware:</strong> Intel Xeon E5-2660 v2 (10 cores / 20 threads), 68 GB ECC RAM, NVIDIA GTX 1050 GPU passthrough, SSD & HDD storage.</p>
+        <p><strong>Role:</strong> Central virtualization host managing all core lab services, VMs, and containers.</p>
+        <p><strong>Key Functions:</strong></p>
+        <ul>
+          <li>Hosts VMs and LXCs for network services, system testing, and containerized apps.</li>
+          <li>Provides GPU passthrough for accelerated workloads.</li>
+          <li>Supports VLAN segmentation and virtual bridges.</li>
+          <li>Snapshotting, backups, and isolated testing environments.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Plex Media Server</h3>
+        <p><strong>Hardware:</strong> Intel Xeon E5-1620 v2, 32 GB RAM, NVIDIA GTX 1060, running Windows.</p>
+        <p><strong>Role:</strong> Dedicated media server optimized for streaming.</p>
+        <p><strong>Key Functions:</strong></p>
+        <ul>
+          <li>Hosts personal media library for local & remote streaming.</li>
+          <li>Encrypted connections via Surfshark VPN.</li>
+          <li>Isolated VLAN for administrative and streaming purposes.</li>
+          <li>Backups to TrueNAS for redundancy.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>TrueNAS Storage Server</h3>
+        <p><strong>Role:</strong> Centralized storage and backup with over 4TB capacity.</p>
+        <p><strong>Key Functions:</strong></p>
+        <ul>
+          <li>Stores VM snapshots, container backups, and system images.</li>
+          <li>Provides NFS & SMB shares.</li>
+          <li>Monitors disk health via SMART and scheduled snapshots.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Gaming & Streaming PCs</h3>
+        <p><strong>Gaming PC:</strong> Ryzen 7 7800X3D, RTX 3060 Ti, 32 GB DDR5 RAM.</p>
+        <p><strong>Streaming PC:</strong> Ryzen 5 5600X, RTX 3050, 32 GB DDR4 RAM.</p>
+        <p><strong>Role:</strong> Isolated in gaming VLAN for high-performance workloads, media streaming, and network testing.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Network Architecture Section -->
+  <section class="section">
     <h2>Network Architecture</h2>
+    <p><strong>Switch:</strong> TP-Link 16-Port Gigabit Managed Switch with VLAN support.</p>
+    <p><strong>VLANs:</strong></p>
     <ul>
-      <li>VLAN 10 – Administration</li>
-      <li>VLAN 20 – Gaming</li>
-      <li>VLAN 30 – General Access</li>
+      <li>VLAN 10 – Administration (Proxmox, TrueNAS, Plex)</li>
+      <li>VLAN 20 – Gaming (Gaming PC, Streaming PC, PS5)</li>
+      <li>VLAN 30 – General Access (IoT devices, guest network)</li>
     </ul>
+    <p><strong>Remote Access & Security:</strong></p>
+    <ul>
+      <li>WireGuard VPN for secure remote access with dynamic DNS.</li>
+      <li>Surfshark VPN on Plex for encrypted streaming traffic.</li>
+      <li>OPNsense VM manages firewall, VLANs, and security rules.</li>
+    </ul>
+    <p><strong>Planned Enhancements:</strong> Reverse proxy with NGINX, centralized logging, IDS, and advanced firewall policies.</p>
+  </section>
 
+  <!-- Virtualization Layer Section -->
+  <section class="section cards-section">
     <h2>Virtualization Layer (Proxmox Services)</h2>
-    <p>Docker LXC hosts services like Heimdall, NGINX Proxy Manager, Portainer, Uptime Kuma, Home Assistant, and more.</p>
+    <div class="cards-container">
 
-    <h2>Security & Remote Access</h2>
-    <p>WireGuard VPN provides secure remote access with OPNsense handling all firewall and VLAN management.</p>
-  </main>
+      <div class="card">
+        <h3>Docker LXC (Alpine)</h3>
+        <p><strong>Role:</strong> Hosts containerized applications for network services, home automation, and self-hosted software.</p>
+        <p><strong>Services Running:</strong></p>
+        <ul>
+          <li>Heimdall, NGINX Proxy Manager, Portainer, Uptime Kuma</li>
+          <li>Home Assistant, Navidrome, The Lounge, Vikunja</li>
+          <li>Audiobookshelf, WordPress</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>OPNsense VM</h3>
+        <p><strong>Role:</strong> Enterprise-style firewall and routing solution.</p>
+        <ul>
+          <li>Manages all network traffic, VLAN segmentation, NAT rules, and port forwarding</li>
+          <li>Provides VPN termination points and internal monitoring</li>
+          <li>Acts as security gateway for perimeter defense</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Pi-hole LXC (Alpine)</h3>
+        <p><strong>Role:</strong> Network-wide ad blocking and DNS filtering for performance and tracking reduction.</p>
+      </div>
+
+      <div class="card">
+        <h3>WireGuard LXC (Alpine)</h3>
+        <p><strong>Role:</strong> VPN server for secure remote access to home lab, integrated with VLAN routing.</p>
+      </div>
+
+      <div class="card">
+        <h3>Ubuntu VM</h3>
+        <p><strong>Role:</strong> Linux testing environment for experimentation, scripting, and learning.</p>
+      </div>
+
+      <div class="card">
+        <h3>Windows Server 2025 VM</h3>
+        <p><strong>Role:</strong> Enterprise testing for Active Directory, group policies, and Windows network scenarios.</p>
+      </div>
+
+      <div class="card">
+        <h3>Windows 10 VM</h3>
+        <p><strong>Role:</strong> Desktop testing for software deployment and Windows administration practice.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Storage Section -->
+  <section class="section">
+    <h2>Storage, Backup & Data Management</h2>
+    <p>TrueNAS handles all backups for Proxmox-hosted systems and containers (excluding large media). Snapshots, backups, and configuration files are scheduled regularly to ensure disaster recovery and minimal downtime. File integrity, SMART monitoring, and replication tasks provide enterprise-level resilience.</p>
+  </section>
+
 </body>
 </html>
