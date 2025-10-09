@@ -1,58 +1,41 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Homelab — Derek Cyr</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <title>Derek Cyr | Home Lab</title>
+  <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="wrap">
-      <h1 class="brand">My Homelab</h1>
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="homelab.html">Homelab</a>
-      </nav>
-    </div>
+  <header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">Resume</a>
+    </nav>
   </header>
 
-  <main class="wrap">
-    <section>
-      <h2>Overview</h2>
-      <p>My homelab runs Proxmox as the hypervisor. I use OPNSense for firewalling and VLANs, and Docker LXC containers for services (Heimdall, Nginx Proxy Manager, Portainer, Pi-Hole, Home Assistant, Plex).</p>
-    </section>
+  <main>
+    <h1>Home Lab Infrastructure Overview</h1>
+    <p>My home lab is a robust, self-hosted environment designed to simulate enterprise-grade IT infrastructure...</p>
 
-    <section>
-      <h2>Components</h2>
-      <ul>
-        <li><strong>Proxmox VE</strong> — Virtualization host for VMs and LXC.</li>
-        <li><strong>OPNSense</strong> — Firewall & VLAN management.</li>
-        <li><strong>Docker LXC</strong> — Heimdall, Nginx Proxy Manager, Portainer, Uptime Kuma.</li>
-        <li><strong>Pi-hole</strong> — DNS filtering and ad-blocking.</li>
-        <li><strong>Plex</strong> — Media server on Windows VM.</li>
-      </ul>
-    </section>
+    <h2>Physical Infrastructure</h2>
+    <ul>
+      <li><b>Proxmox Virtualization Server:</b> Intel Xeon E5-2660 v2, 68GB RAM, GTX 1050 GPU passthrough...</li>
+      <li><b>Plex Media Server:</b> Windows, GTX 1060 GPU, Surfshark VPN...</li>
+      <li><b>TrueNAS Storage Server:</b> 4TB capacity, NFS & SMB shares...</li>
+    </ul>
 
-    <section>
-      <h2>Network Diagram</h2>
-      <p>Below is a diagram and screenshots of services. (Upload images to <code>assets/images/</code> and name accordingly.)</p>
-      <img src="assets/images/network-diagram.png" alt="Network diagram" style="max-width:100%;border-radius:6px;box-shadow:0 2px 6px rgba(0,0,0,.08)">
-    </section>
+    <h2>Network Architecture</h2>
+    <ul>
+      <li>VLAN 10 – Administration</li>
+      <li>VLAN 20 – Gaming</li>
+      <li>VLAN 30 – General Access</li>
+    </ul>
 
-    <section>
-      <h2>Notes & Links</h2>
-      <ul>
-        <li>Show screenshots of Proxmox, OPNSense Dashboard, Nginx Proxy Manager, and Portainer.</li>
-        <li>Explain key configs: VLAN IDs, subnetting, NAT rules, reverse-proxy rules, and backup strategy.</li>
-      </ul>
-    </section>
+    <h2>Virtualization Layer (Proxmox Services)</h2>
+    <p>Docker LXC hosts services like Heimdall, NGINX Proxy Manager, Portainer, Uptime Kuma, Home Assistant, and more.</p>
+
+    <h2>Security & Remote Access</h2>
+    <p>WireGuard VPN provides secure remote access with OPNsense handling all firewall and VLAN management.</p>
   </main>
-
-  <footer class="site-footer">
-    <div class="wrap">
-      <p>© 2025 Derek Cyr</p>
-    </div>
-  </footer>
 </body>
 </html>
