@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Homelab — Derek Cyr</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <h1 class="brand">My Homelab</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="homelab.html">Homelab</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section>
+      <h2>Overview</h2>
+      <p>My homelab runs Proxmox as the hypervisor. I use OPNSense for firewalling and VLANs, and Docker LXC containers for services (Heimdall, Nginx Proxy Manager, Portainer, Pi-Hole, Home Assistant, Plex).</p>
+    </section>
+
+    <section>
+      <h2>Components</h2>
+      <ul>
+        <li><strong>Proxmox VE</strong> — Virtualization host for VMs and LXC.</li>
+        <li><strong>OPNSense</strong> — Firewall & VLAN management.</li>
+        <li><strong>Docker LXC</strong> — Heimdall, Nginx Proxy Manager, Portainer, Uptime Kuma.</li>
+        <li><strong>Pi-hole</strong> — DNS filtering and ad-blocking.</li>
+        <li><strong>Plex</strong> — Media server on Windows VM.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Network Diagram</h2>
+      <p>Below is a diagram and screenshots of services. (Upload images to <code>assets/images/</code> and name accordingly.)</p>
+      <img src="assets/images/network-diagram.png" alt="Network diagram" style="max-width:100%;border-radius:6px;box-shadow:0 2px 6px rgba(0,0,0,.08)">
+    </section>
+
+    <section>
+      <h2>Notes & Links</h2>
+      <ul>
+        <li>Show screenshots of Proxmox, OPNSense Dashboard, Nginx Proxy Manager, and Portainer.</li>
+        <li>Explain key configs: VLAN IDs, subnetting, NAT rules, reverse-proxy rules, and backup strategy.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>© 2025 Derek Cyr</p>
+    </div>
+  </footer>
+</body>
+</html>
