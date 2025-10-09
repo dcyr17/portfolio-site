@@ -3,32 +3,82 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Derek Cyr | IT Portfolio</title>
-  <link rel="stylesheet" href="assets/styles.css">
+  <title>Derek Cyr - Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <header>
-    <h1>Derek Cyr</h1>
-    <p>IT Technician • Systems Admin • Home Lab Enthusiast</p>
-    <nav>
-      <a href="about.html">Resume</a>
-      <a href="homelab.html">Home Lab</a>
-    </nav>
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="hero-bg">
+      <div class="blob blob1"></div>
+      <div class="blob blob2"></div>
+    </div>
+    <div class="hero-content">
+      <h1 class="hero-title">Derek Cyr</h1>
+      <p class="hero-subtitle">IT Enthusiast | Home Lab Builder | Systems Admin</p>
+      <a href="homelab.html" class="btn-hero">Explore My Home Lab</a>
+    </div>
   </header>
 
-  <main>
-    <section>
-      <h2>Welcome</h2>
-      <p>
-        I'm an IT professional with hands-on experience in systems administration, 
-        virtualization, and enterprise networking. This portfolio showcases my 
-        professional background and my self-hosted home lab infrastructure.
-      </p>
-    </section>
-  </main>
+<section class="skills-section">
+  <h2>My Skills</h2>
+  <div class="skills-container">
+    <div class="skill-circle" data-percent="90">
+      <svg viewBox="0 0 36 36" class="circular-chart">
+        <path class="circle-bg"
+          d="M18 2.0845
+             a 15.9155 15.9155 0 0 1 0 31.831
+             a 15.9155 15.9155 0 0 1 0 -31.831"/>
+        <path class="circle"
+          stroke-dasharray="0, 100"
+          d="M18 2.0845
+             a 15.9155 15.9155 0 0 1 0 31.831
+             a 15.9155 15.9155 0 0 1 0 -31.831"/>
+      </svg>
+      <span class="skill-label">Networking</span>
+    </div>
 
-  <footer>
-    <p>📧 <a href="mailto:derekcyr17@gmail.com">derekcyr17@gmail.com</a> | Courtice, ON</p>
-  </footer>
+    <div class="skill-circle" data-percent="85">
+      <svg viewBox="0 0 36 36" class="circular-chart">
+        <path class="circle-bg"
+          d="M18 2.0845
+             a 15.9155 15.9155 0 0 1 0 31.831
+             a 15.9155 15.9155 0 0 1 0 -31.831"/>
+        <path class="circle"
+          stroke-dasharray="0, 100"
+          d="M18 2.0845
+             a 15.9155 15.9155 0 0 1 0 31.831
+             a 15.9155 15.9155 0 0 1 0 -31.831"/>
+      </svg>
+      <span class="skill-label">Virtualization</span>
+    </div>
+
+    <div class="skill-circle" data-percent="80">
+      <svg viewBox="0 0 36 36" class="circular-chart">
+        <path class="circle-bg"
+          d="M18 2.0845
+             a 15.9155 15.9155 0 0 1 0 31.831
+             a 15.9155 15.9155 0 0 1 0 -31.831"/>
+        <path class="circle"
+          stroke-dasharray="0, 100"
+          d="M18 2.0845
+             a 15.9155 15.9155 0 0 1 0 31.831
+             a 15.9155 15.9155 0 0 1 0 -31.831"/>
+      </svg>
+      <span class="skill-label">Docker & Containers</span>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Contact Section -->
+  <section class="contact-section">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:derek@example.com">derek@example.com</a></p>
+    <a href="download.html" class="btn-download">Download Resume</a>
+  </section>
+
+  <script src="scripts.js"></script>
 </body>
 </html>
