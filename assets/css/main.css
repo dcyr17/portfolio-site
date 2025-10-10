@@ -1418,9 +1418,6 @@ section,
 /*--------------------------------------------------------------
 # Starter Section Section
 --------------------------------------------------------------*/
-.starter-section {
-  /* Add your styles here */
-}
 
 
 /* Animated Background Circles */
@@ -1450,4 +1447,76 @@ section,
   0%   { transform: translate(0, 0) scale(1); }
   50%  { transform: translate(20px, -40px) scale(1.05); }
   100% { transform: translate(0, 0) scale(1); }
+}
+
+
+.portfolio-text-box {
+  background: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio-text-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.portfolio-text-box h4 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.portfolio-text-box h5 {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+.portfolio-text-box p {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: #333;
+}
+
+
+/* Hero2 Section - overrides hero styles */
+#hero2 {
+  height: 50vh !important;      /* half viewport height */
+  min-height: 300px;            /* ensures it doesn't get too small on mobile */
+  display: flex !important;
+  align-items: center !important; /* vertical centering */
+  justify-content: center;      /* horizontal centering */
+  position: relative;
+  overflow: hidden;
+  padding: 0;                   /* remove extra spacing from hero class */
+}
+
+/* Animated circles inside hero2 */
+#hero2 .animated-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+/* Content stays above circles */
+#hero2 .container {
+  position: relative;
+  z-index: 1;
+}
+
+
+
+/* Make the icon-box pop on hover */
+.icon-box {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.icon-box:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.15);
 }
