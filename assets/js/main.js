@@ -184,3 +184,25 @@
   });
 
 })();
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  // init Isotope
+  const iso = new Isotope('.isotope-container', {
+    itemSelector: '.portfolio-item',
+    layoutMode: 'masonry'
+  });
+
+  // filter items on click
+  const filtersElem = document.querySelector('.portfolio-filters');
+  filtersElem.addEventListener('click', function(event) {
+    if (!matchesSelector(event.target, 'li')) return;
+    const filterValue = event.target.getAttribute('data-filter');
+    iso.arrange({ filter: filterValue });
+
+    // change active class
+    filtersElem.querySelectorAll('li').forEach(el => el.classList.remove('active'));
+    event.target.classList.add('active');
+  });
+});
+
